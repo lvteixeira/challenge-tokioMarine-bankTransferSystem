@@ -1,5 +1,6 @@
 # challenge-tokioMarine-bankTransferSystem
 
+
 ## Badges
 ![](https://img.shields.io/badge/lang-Java-brown)
 
@@ -130,10 +131,13 @@ A API conta com testes para os endpoints, para rodá-los:
 ```bash
 .\gradlew.bat test --tests com.acme.bankTransferSystemApi.BankTransferSystemApiApplicationTests.shouldNotReturnStatementsIncaseUserNeverScheduledATransfer
 ```
+O report dos testes fica disponível em: 
+
+```bash
+build\reports\tests\test\index.html
+```
 
 ## Documentação
 A documentação dos endpoints da API pode ser visualizada em http://localhost:8080/swagger-ui/index.html#/
 ## Utilização/Exemplos
 Com o app e api em execução acesse http://localhost:3000/ para acessar a interface de usuário.
-
-
