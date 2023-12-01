@@ -86,19 +86,6 @@ O projeto depende da versão 20.9.0 do Node.js. Com o Node.js instalado:
 ```bash
 cd react-bankTransferSystemApp\bank-transfer-system
 ```
-2 - Rodar o projeto:
-```bash
-npm run dev
-```
-
-Se tiver algum problema:
-
-1 - Remover os diretórios
-
-`bank-transfer-system\node_modules` 
-
-`bank-transfer-system\.next`
-
 2 - Instalar dependências:
 ```bash
 npm install
@@ -107,6 +94,14 @@ npm install
 ```bash
 npm run dev
 ```
+
+Se tiver algum problema, delete os seguintes diretórios:
+
+`bank-transfer-system\node_modules` 
+
+`bank-transfer-system\.next`
+
+Após a deleção, volte ao passo 1.
 
 ### Backend
 
@@ -145,6 +140,10 @@ build\reports\tests\test\index.html
 ```
 
 ## Documentação
-A documentação dos endpoints da API pode ser visualizada em http://localhost:8080/swagger-ui/index.html#/
+A documentação dos endpoints pode ser visualizada em http://localhost:8080/swagger-ui/index.html#/
 ## Utilização/Exemplos
 Com o app e api em execução acesse http://localhost:3000/ para acessar a interface de usuário.
+
+![Screenshot de tela de agendamento de transferência.](https://i.ibb.co/Hgt3GXY/img1.png)
+
+![Screenshot de tela de extrato bancario.](https://i.ibb.co/Bq7J10n/img2.png)
