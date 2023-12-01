@@ -1,0 +1,25 @@
+/* scheduleFormStyle.module.css */
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* Adjust as needed for spacing between input fields */
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+
+.label {
+    width: 140px; /* Set a consistent width for the labels */
+    margin-right: 10px; /* Adjust as needed for spacing between label and input */
+}
+
+.inputCustom {
+    width: 100%; /* Make the input take up the remaining space */
+    padding: 8px; /* Add padding for better appearance */
+}
