@@ -144,5 +144,6 @@ A documentação dos endpoints pode ser visualizada em http://localhost:8080/swa
 ## Utilização/Exemplos
 Com o app e api em execução acesse http://localhost:3000/ para acessar a interface de usuário.
 
-![Screenshot de tela de agendamento de transferência.](https://ibb.co/x51dz3G)
-![Screenshot de tela de extrato bancario.](https://ibb.co/J5bThD3)
+![Screenshot de tela de agendamento de transferência.](https://i.ibb.co/Hgt3GXY/img1.png)
+
+![Screenshot de tela de extrato bancario.](https://i.ibb.co/Bq7J10n/img2.png)
