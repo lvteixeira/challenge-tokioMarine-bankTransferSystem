@@ -15,12 +15,12 @@ export default function Navbar() {
                         <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-52">
                             <li>
                                 <Link href="/">
-                                    Transfer
+                                    Schedule Transfer
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/statement">
-                                    Statements
+                                    Bank Statement
                                 </Link>
                             </li>
                         </ul>
