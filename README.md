@@ -23,9 +23,9 @@ Projeto de prototipagem escrito para o desafio técnico de desenvolvimento de so
 # Decisões Arquiteturais
 O planejamento do projeto teve foco na entrega dos requisitos funcionais explicitados no requisito visando entregar um protótipo de qualidade, com eficiência e no menor tempo possível.
 
-Em um projeto de maior dimensão e.g: "O servidor recebe milhões de requisições de agendamento simultâneas e depende do processamento de informações por diferentes microsserviços para fazer uma transferência ou pagamento", certamente seria necessário implementar uma arquitetura de microsserviços com solução de mensageria. Para atender aos requisitos do desafio, uma arquitetura em três camadas com um banco de dados em memória, uma API REST e outro servidor responsável pela apresentação dos dados e interação com o usuário foi suficiente.
+Em um projeto de maior dimensão e.g: "O servidor recebe milhões de requisições de agendamento simultâneas e depende do processamento de informações por diferentes microsserviços para fazer uma transferência ou pagamento", certamente seria plausível implementar uma arquitetura de microsserviços com solução de mensageria. Para atender aos requisitos do desafio, uma arquitetura em três camadas com um banco de dados em memória, uma API REST e outro servidor responsável pela apresentação dos dados e interação com o usuário foi suficiente.
 
-O backend é orientado à serviços, no padrão MVCS, arquitetura REST recebendo e respondendo requisições HTTP no formato JSON. A arquitetura orientada à serviços provê melhor `readability` e separação de responsabilidades (SRP), fazendo com que a regra de negócio seja aplicada de forma mais organizada, coesa e possa ser granularizada com maior facilidade de acordo com necessidades futuras, o que facilita alteração, manutenção, integração e portabilidade.
+A api é orientada à serviços, no padrão MVCS, arquitetura REST recebendo e respondendo requisições HTTP no formato JSON. A arquitetura orientada à serviços provê melhor _readability_ e separação de responsabilidades (SRP), fazendo com que a regra de negócio seja aplicada de forma mais organizada, coesa e possa ser granularizada com maior facilidade de acordo com necessidades futuras, o que facilita alteração, manutenção, integração e portabilidade.
 
 O código da API utiliza o padrão de injeção de dependência, o que permite que uma classe obtenha suas dependências a partir de outra, tornando o código mais limpo e desacoplado, além de reutilizável e melhor testável. Uma classe de serviço pode injetar uma classe de repositório para acessar dados do banco de dados, um controlador pode injetar uma classe de serviço para processar solicitações HTTP, uma classe de configuração pode injetar uma classe de bean para configurar a aplicação.
 
@@ -33,7 +33,7 @@ Trafegar DTOs e não Entitys! O que trafega na camada de aplicação não é a s
 
 Por sua vez, o front end é um SPA responsável por prover a interface de usuário. As páginas HTML são renderizadas e dinamizadas de acordo com as ações do usuário utilizando React e Javascript. Para estilos, foi utilizado TailwindCSS e daisyUI.
 
-A componentizaçao das telas ajuda a desenhar o fluxo de funcionamento do app e facilita a implementação de novas funcionalidades pois ajuda na separação das responsabilidades, além de deixar o código mais organizado e facilitar ainda a configuração de estilos. O Tailwind CSS fica responsável por aplicar estilos pré definidos direto no className do elemento reduzindo a escrita de CSS e o daisyUi é responsável pelo design dos componentes.
+A componentizaçao das telas ajuda a desenhar o fluxo de funcionamento do app e facilita a implementação de novas funcionalidades pois ajuda na separação das responsabilidades, além de deixar o código mais organizado e facilitar ainda a configuração de estilos. O Tailwind CSS fica responsável por aplicar estilos pré definidos direto no `className` do elemento otimizando a escrita de CSS e o daisyUi é responsável pelo design dos componentes.
 
 
 
@@ -48,12 +48,16 @@ A componentizaçao das telas ajuda a desenhar o fluxo de funcionamento do app e 
 
 **Backend:** SpringBoot, Banco de Dados (h2);
 
-A API de transferências foi escrita em Java, utilizando o framework Spring Boot persistindo dados em banco h2. Para a interface de usuário considerei a utilização do React para facilitar a manipulação de eventos de ciclo de vida dos componentes, o que ajudou a acelerar a entrega do protótipo.
+A api de transferências foi escrita em Java, utilizando o framework Spring Boot persistindo dados em banco h2. Para a interface de usuário considerei a utilização do Next.js para facilitar a manipulação de eventos de ciclo de vida dos componentes, o que ajudou a acelerar a entrega do protótipo, além de ser um framework de alta performance (seu compilador é escrito em Rust) e fácil integração com diversos recursos.
+
+https://swc.rs
+https://nextjs.org/docs/architecture
+
 ## Features
 ### UI
 - Permite que o usuário agende transferências;
 - Permite que o usuário veja as transferências agendadas;
-- Verifica se o número da conta tem 10 dígitos; 
+- Garante que o número da conta esteja no padrão; 
 - Garante que a quantia seja um valor inteiro e esteja no padrão esperado;
 - Não permite que a data para realização da transferência seja anterior a do dia corrente;
 - Formata a data para o padrao esperado, independente do local time do navegador;
@@ -62,6 +66,7 @@ A API de transferências foi escrita em Java, utilizando o framework Spring Boot
 ### API
 - Lista transferências por usuário (extrato);
 - Cria nova transferência (agendamento);
+- Processa e analisa solicitações de transferência de acordo com a regra de negócio;
 - Calcula a diferença em dias entre duas datas;
 - Calcula taxa referente à transferência;
 - Não permite que transferência seja agendada para mais de 50 dias a partir da data de solicitação;
@@ -74,7 +79,7 @@ A API de transferências foi escrita em Java, utilizando o framework Spring Boot
 
 ### Frontend
 
-O projeto depende da versão N do Node.js. Com o Node.js instalado:
+O projeto depende da versão 20.9.0 do Node.js. Com o Node.js instalado:
 
 1 - Acessar o diretório raiz:
 ```bash
@@ -89,9 +94,9 @@ Se tiver algum problema:
 
 1 - Remover os diretórios
 
-'bank-transfer-system\node_modules' 
+`bank-transfer-system\node_modules` 
 
-'bank-transfer-system\.next'
+`bank-transfer-system\.next`
 
 2 - Instalar dependências:
 ```bash
