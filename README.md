@@ -50,8 +50,9 @@ A componentizaçao das telas ajuda a desenhar o fluxo de funcionamento do app e 
 
 A api de transferências foi escrita em Java, utilizando o framework Spring Boot persistindo dados em banco h2. Para a interface de usuário considerei a utilização do Next.js para facilitar a manipulação de eventos de ciclo de vida dos componentes, o que ajudou a acelerar a entrega do protótipo, além de ser um framework de alta performance (seu compilador é escrito em Rust) e fácil integração com diversos recursos.
 
+https://nextjs.org/docs/architecture/nextjs-compiler
+
 https://swc.rs
-https://nextjs.org/docs/architecture
 
 ## Features
 ### UI
